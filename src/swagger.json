@@ -1,0 +1,56 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+      "title": "FC Documentation",
+      "description": "This is an API Rent",
+      "version": "1.0.0",
+      "contact": {
+          "email": "renanestery1@gmail.com"
+      }
+  },
+  "paths": {
+    "/users": {
+        "post": {
+            "tags": [
+                "USERS"
+            ],
+            "summary": "Create a User",
+            "description": "Create a new user",
+            "requestBody": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "Object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "email": {
+                                    "type": "string"
+                                },
+                                "password": {
+                                  "type": "string"
+                              }
+                            },
+                            "example": {
+                                "name": "Jose Carlos",
+                                "email": "exemplo@exemplo",
+                                "password": "123"
+                            }
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "201": {
+                    "description": "Created"
+                },
+                "500": {
+                    "description": "User already exists"
+                }
+            }
+        }
+    }
+}
+
+}
