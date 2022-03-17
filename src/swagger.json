@@ -12,7 +12,7 @@
     "/users": {
         "post": {
             "tags": [
-                "USERS"
+                "CREATE USER"
             ],
             "summary": "Create a User",
             "description": "Create a new user",
@@ -47,6 +47,40 @@
                 },
                 "500": {
                     "description": "User already exists"
+                }
+            }
+        },
+        "get": {
+            "tags": [
+                "Find All User"
+            ],
+            "summary": "List all Users",
+            "description": "List all users",
+            "responses": {
+                "200": {
+                    "description": "Sucess",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "password": {
+                                            "type": "string"
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
